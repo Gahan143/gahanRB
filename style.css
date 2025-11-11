@@ -1,0 +1,523 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ========== BASE STYLES ========== */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding-top: 90px; /* matches navbar height */
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Global section padding */
+section {
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* smaller navbar height for mobile */
+  }
+  section {
+    padding: 60px 0;
+  }
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1000;
+}
+
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo img {
+  height: 80px;
+  width: 80px;
+  object-fit: contain;
+}
+
+.nav-logo span {
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgb(25, 54, 88);
+  letter-spacing: 0.4px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: rgb(25, 54, 88);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #003366;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #00aaff;
+}
+
+/* ========== MOBILE NAVBAR ========== */
+/* ========== MOBILE NAVBAR FIX ========== */
+/* ========== MOBILE NAVBAR FIX (Final) ========== */
+/* Better hamburger alignment */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #1a1a1a;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Show menu toggle on tablets and smaller */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex;
+    position: relative;
+    margin-left: auto; /* pushes it to the right end inside the flex container */
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.97);
+    width: 230px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    border-radius: 10px;
+  }
+
+
+
+  .nav-logo img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .nav-logo span {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+/* ========== ANIMATIONS & MISC ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 76, 153, 0.3);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form focus */
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(0, 76, 153, 0.2);
+  border-color: #004C99;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Lightbox (for gallery) */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+@keyframes zoomSlow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-zoom-slow img {
+  animation: zoomSlow 20s ease-in-out infinite alternate;
+}
+body {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+/* Base button transition */
+.hero-btn-primary,
+.hero-btn-secondary {
+  transition: all 0.4s ease;
+  transform: translateY(0);
+}
+
+/* Lift up and glow effect */
+.hero-btn-primary:hover,
+.hero-btn-secondary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 76, 153, 0.3);
+}
+
+/* Glow pulse for the primary button */
+.hero-btn-primary:hover {
+  background: linear-gradient(90deg, #004C99, #007BFF);
+}
+
+/* Subtle border animation for secondary button */
+.hero-btn-secondary {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn-secondary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #004C99;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.hero-btn-secondary:hover::after {
+  transform: scaleX(1);
+}
+[data-aos="fade-right"] img {
+  transition: transform 0.6s ease;
+}
+
+[data-aos="fade-right"] img:hover {
+  transform: scale(1.03);
+}
+/* Base style for the Learn More button */
+.learn-btn {
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+/* Lift slightly + glow on hover */
+.learn-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 76, 153, 0.3);
+}
+
+/* Animated underline effect */
+.learn-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #004C99, #007BFF);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.learn-btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Optional subtle gradient on hover */
+.learn-btn:hover {
+  background: linear-gradient(90deg, #004C99, #0066cc);
+}
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-effect 600ms linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+/* Service Card Hover Effect */
+.service-card {
+  transition: all 0.4s ease;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 76, 153, 0.2);
+}
+
+/* Optional subtle glow on hover icon */
+.service-card i {
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.service-card:hover i {
+  transform: scale(1.1);
+  color: #007BFF;
+}
+/* View All Services Button */
+.view-btn {
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+/* Lift + glow effect */
+.view-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 76, 153, 0.3);
+  background: linear-gradient(90deg, #004C99, #0066cc);
+}
+
+/* Underline animation */
+.view-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #004C99, #007BFF);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.view-btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Optional glowing border pulse */
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(0, 76, 153, 0);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(0, 76, 153, 0.4);
+  }
+}
+
+.view-btn:hover {
+  animation: buttonPulse 1.5s infinite;
+}
+/* === GLOBAL RESPONSIVE FIXES === */
+
+/* Ensure all layout containers stay centered */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Keep all main containers centered */
+/* Container utility - use only where you want centered content */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+
+/* Fix for mobile/tablet layouts */
+@media (max-width: 992px) {
+  .nav-container,
+  section,
+  footer,
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  img, video, picture {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Prevent anything from overflowing off-screen */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Background-based hero or banners */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+section {
+  width: 100%;
+}
+/* Remove unwanted horizontal scrollbar globally */
+html, body {
+  overflow-x: hidden;
+}
+/* Hide vertical scrollbar but keep scrolling */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer / Edge */
+  overflow-y: scroll; /* ensure layout doesn’t jump when toggling */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}

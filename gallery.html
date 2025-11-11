@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Gallery | RB Engineering</title>
+  <meta
+    name="description"
+    content="View our portfolio of bus manufacturing and vehicle restoration projects at RB Engineering."
+  />
+
+  <!-- Fonts & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#004C99",
+            secondary: "#CCCCCC",
+          },
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-poppins bg-white">
+  <header></header>
+
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gray-900 overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="image/gallery.jpg"
+          alt="Gallery"
+          class="w-full h-full object-cover opacity-60"
+        />
+      </div>
+      <div
+        class="relative z-10 px-4 text-center text-white max-w-4xl mx-auto"
+        data-aos="zoom-in"
+      >
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Our Work Gallery
+        </h1>
+        <p class="text-xl">
+          See our Craftsmanship through Completed Projects and Achievements
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="py-8 px-4 bg-gray-50" data-aos="fade-up">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="gallery-filter active" data-filter="all">
+            All 
+          </button>
+          <button class="gallery-filter" data-filter="manufacturing">
+            Manufacturing & Restoration
+          </button>
+          <button class="gallery-filter" data-filter="restoration">
+            Team & Company
+          </button>
+          <button class="gallery-filter" data-filter="custom">
+            Custom Work
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-12 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          id="gallery-grid"
+        ></div>
+      </div>
+    </section>
+  </main>
+
+  <custom-footer></custom-footer>
+
+  <!-- Lightbox Modal -->
+  <div
+    id="lightbox"
+    class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+  >
+    <div class="relative max-w-5xl w-full">
+      <button
+        id="close-lightbox"
+        class="absolute -top-12 right-0 text-white text-4xl"
+      >
+        &times;
+      </button>
+      <img
+        id="lightbox-image"
+        src=""
+        alt=""
+        class="w-full max-h-[80vh] object-contain"
+      />
+      <div id="lightbox-caption" class="text-white text-center mt-4"></div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="navbar.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: false,
+    });
+
+    window.addEventListener("scroll", () => {
+      AOS.refresh();
+    });
+
+    // Gallery data
+    const galleryItems = [
+      {
+        id: 1,
+        title: "Grabbed the deal",
+        category: "restoration",
+        image: "image/g6.jpg",
+        description:
+          "Grabbed a deal with the company.",
+      },
+      {
+        id: 2,
+        title: "Manufacturing campus bus",
+        category: "manufacturing",
+        image: "image/bus.jpg",
+        description: "Safe and durable campus bus manufacture.",
+      },
+      {
+        id: 3,
+        title: "Team Training",
+        category: "restoration",
+        image: "image/g4.jpg",
+        description: "Attended skillful team training with CEO.",
+      },
+      {
+        id: 4,
+        title: "Tourist Bus Manufacturing",
+        category: "manufacturing",
+        image: "image/buss.jpg",
+        description: "Safe and durable tourist bus construction",
+      },
+      {
+        id: 5,
+        title: "Frame Straightening",
+        category: "manufacturing",
+        image: "image/truck.jpg",
+        description: "Professional frame repair after collision",
+      },
+      {
+        id: 6,
+        title: "Specialty Vehicle",
+        category: "custom",
+        image: "image/truckl.jpg",
+        description: "Custom-built vehicle for special purposes",
+      },
+      {
+        id: 7,
+        title: "Team",
+        category: "restoration",
+        image: "image/g9.jpg",
+        description: "Lions Club program",
+      },
+      {
+        id: 8,
+        title: "Engineering Department",
+        category: "restoration",
+        image: "image/g2.jpg",
+        description: "Went to Engineering Department for new planning.",
+      },
+      {
+        id: 9,
+        title: "Custom Seats",
+        category: "custom",
+        image: "image/seats.jpg",
+        description: "Premium interior fabrication for tourist bus",
+      },
+    ];
+
+    // Initialize gallery
+    function initGallery() {
+      const galleryGrid = document.getElementById("gallery-grid");
+      const filterButtons = document.querySelectorAll(".gallery-filter");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+      const closeLightbox = document.getElementById("close-lightbox");
+
+      renderGalleryItems(galleryItems);
+
+      // Filter logic
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          const filter = button.dataset.filter;
+          const filteredItems =
+            filter === "all"
+              ? galleryItems
+              : galleryItems.filter((item) => item.category === filter);
+
+          renderGalleryItems(filteredItems);
+        });
+      });
+
+      function openLightbox(imageSrc, title, description) {
+        lightboxImage.src = imageSrc;
+        lightboxCaption.textContent = `${title} - ${description}`;
+        lightbox.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      closeLightbox.addEventListener("click", () => {
+        lightbox.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.add("hidden");
+          document.body.style.overflow = "auto";
+        }
+      });
+
+      function renderGalleryItems(items) {
+        galleryGrid.innerHTML = items
+          .map(
+            (item, index) => `
+            <div 
+              class="gallery-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300" 
+              data-category="${item.category}" 
+              data-aos="${index % 2 === 0 ? "fade-up" : "zoom-in"}"
+            >
+              <img src="${item.image}" alt="${item.title}" 
+                class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end opacity-0 group-hover:opacity-100 transition duration-300 p-4">
+                <div class="text-white">
+                  <h3 class="text-xl font-bold">${item.title}</h3>
+                  <p class="text-sm">${item.description}</p>
+                </div>
+              </div>
+              <button class="absolute inset-0 w-full h-full gallery-view-btn" 
+                data-image="${item.image}" 
+                data-title="${item.title}" 
+                data-description="${item.description}">
+              </button>
+            </div>`
+          )
+          .join("");
+
+        document.querySelectorAll(".gallery-view-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            openLightbox(
+              btn.dataset.image,
+              btn.dataset.title,
+              btn.dataset.description
+            );
+          });
+        });
+
+        // Refresh AOS after new items load
+        AOS.refresh();
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", initGallery);
+    feather.replace();
+  </script>
+</body>
+</html>

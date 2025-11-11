@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | RB Engineering</title>
+  <meta name="description" content="Get in touch with RB Engineering for bus manufacturing and vehicle restoration services in Pokhara." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Feather Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#004C99',
+            secondary: '#CCCCCC',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-poppins bg-white">
+  <header></header>
+
+  <main class="main-content">
+    <!-- Contact Hero -->
+    <section class="relative py-20 bg-gray-900 overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="image/g.jpg" alt="Contact RB Engineering" class="w-full h-full object-cover opacity-60" />
+      </div>
+      <div class="relative z-10 px-4 text-center text-white max-w-4xl mx-auto" data-aos="fade-up">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+        <p class="text-xl">Get in touch with our team for inquiries, quotes, or consultations</p>
+      </div>
+    </section>
+
+    <!-- Contact Form & Info -->
+    <section class="py-16 px-4 md:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+        <!-- Contact Form -->
+        <div class="lg:w-1/2" data-aos="fade-right">
+          <h2 class="text-3xl font-bold text-primary mb-6">Send Us a Message</h2>
+          <form
+        id="contactForm"
+        action="https://formspree.io/f/mjkjvpdy"
+        method="POST"
+        class="bg-white p-8 rounded-lg shadow-md"
+      >
+
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required />
+            </div>
+
+            <div class="mb-6">
+              <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+              <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required />
+            </div>
+
+            <div class="mb-6">
+              <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
+              <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                <option value="">Select a service</option>
+                <option value="manufacturing">Bus Body Manufacturing</option>
+                <option value="refurbishment">Vehicle Refurbishment</option>
+                <option value="restoration">Accident Restoration</option>
+                <option value="fabrication">Custom Fabrication</option>
+                <option value="other">Other Inquiry</option>
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label for="message" class="block text-gray-700 font-medium mb-2">Your Message *</label>
+              <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center gap-2">
+              <span id="submitText">Send Message</span>
+              <div id="spinner" class="hidden">
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+              </div>
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info space-y-6">
+  <h3 class="text-2xl font-bold text-blue-800 mb-4">Contact Information</h3>
+
+  <div>
+    <p class="font-semibold">📍 Workshop Location</p>
+    <p>Chauthe, Pokhara, Nepal</p>
+    <a href="https://www.google.com/maps/place/Chauthe,+Pokhara,+Nepal"
+       target="_blank"
+       class="text-blue-600 hover:underline">View on Map</a>
+  </div>
+
+  <div>
+    <p class="font-semibold">📞 Phone</p>
+    <p><a href="tel:+9779856014872"
+          class="text-gray-800 hover:text-blue-700">+977-9856014872</a></p>
+    <a href="tel:+9779856014872"
+       class="text-blue-600 hover:underline">Call Now</a>
+  </div>
+
+  <div>
+    <p class="font-semibold">✉️ Email</p>
+    <p><a href="mailto:rbengineeringpokhara@gmail.com"
+          class="text-gray-800 hover:text-blue-700">rbengineeringpokhara@gmail.com</a></p>
+    <a href="mailto:rbengineeringpokhara@gmail.com"
+       class="text-blue-600 hover:underline">Send Email</a>
+  </div>
+
+  <div>
+    <p class="font-semibold">🕒 Working Hours</p>
+    <p>Sunday – Friday: 7:00 AM – 10:00 PM</p>
+    <p>Saturday: 7:00 AM – 1:00 PM</p>
+  </div>
+
+  <div>
+    <p class="font-semibold">Follow Us</p>
+    <div class="flex space-x-4 mt-2">
+      <a href="https://www.facebook.com/share/1H4Hz5TGH8/?mibextid=wwXIfr" target="_blank" class="text-blue-600 hover:text-blue-800">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/gahan.x?igsh=cGhrbzdjYmdtaGJk&utm_source=qr" target="_blank" class="text-pink-500 hover:text-pink-700">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/gahan-chaulagain-031443256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app " target="_blank" class="text-blue-700 hover:text-blue-900">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+   
+  </main>
+
+  <custom-footer></custom-footer>
+
+  <script src="navbar.js"></script>
+  <script src="script.js"></script>
+  <script>
+    feather.replace();
+    AOS.init({
+      duration: 800,
+      once: false, // Re-animate when scrolling back
+      mirror: true, // Animate on both directions
+      offset: 100
+    });
+    window.addEventListener('scroll', () => {
+      AOS.refresh();
+    });
+  </script>
+</body>
+</html>

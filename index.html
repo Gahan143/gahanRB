@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RB Engineering | Automotive Body Manufacturing & Refurbishment</title>
+    <meta name="description" content="RB Engineering - Pokhara's trusted bus body manufacturing and vehicle refurbishment workshop. Engineering excellence on wheels since 2005.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#004C99',
+                        secondary: '#CCCCCC',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins bg-white">
+    <!-- Navigation Component -->
+  <header></header>
+
+
+    <!-- Hero Section -->
+     <main class="main-content">
+    <section class="relative h-screen flex items-center justify-center bg-gray-900 overflow-hidden">
+  <div class="absolute inset-0 animate-zoom-slow">
+      <img src="image/hero.png" alt="RB Engineering Workshop" class="w-full h-full object-cover opacity-60">
+  </div>
+  <div class="relative z-10 px-4 text-center text-white max-w-4xl">
+      <h1 data-aos="fade-up" data-aos-delay="200" class="text-4xl md:text-6xl font-bold mb-6">
+          Your Partner in Vehicle Body Manufacturing and Restoration
+      </h1>
+      <p data-aos="fade-up" data-aos-delay="400" class="text-xl md:text-2xl mb-8">
+          आर.बी. इन्जिनियरिङ् —हर बसमा नयाँ जीवन, प्रत्येक यात्रामा विश्वास।
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+    <a href="#contact"
+       data-aos="fade-up"
+       data-aos-delay="700"
+       class="hero-btn-primary bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg flex items-center gap-2">
+        <i data-feather="phone"></i> Contact Us
+    </a>
+
+    <a href="#gallery"
+       data-aos="fade-up"
+       data-aos-delay="900"
+       class="hero-btn-secondary bg-white hover:bg-gray-100 text-primary font-semibold py-3 px-6 rounded-lg flex items-center gap-2">
+        <i data-feather="image"></i> View Our Work
+    </a>
+</div>
+
+  </div>
+</section>
+
+
+    <!-- About Preview Section -->
+     <section class="white-section">
+  <div class="gear"></div>
+    <section class="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="flex flex-col md:flex-row items-center gap-12">
+    <!-- Truck Image -->
+    <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+      <img src="image/truck.jpg" alt="RB Engineering Workshop" class="rounded-lg shadow-xl w-full">
+    </div>
+
+    <!-- Text Content -->
+    <div class="md:w-1/2" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+      <h2 class="text-3xl font-bold text-primary mb-6">Engineering Excellence Since 2017</h2>
+      <p class="text-gray-700 mb-6">R.B Engineering is a trusted name in Pokhara for bus body manufacturing and vehicle refurbishment. With over 8 years of experience, we combine skilled craftsmanship with precision engineering to create durable, high-quality vehicles.</p>
+      <p class="text-gray-700 mb-8">From complete bus body construction to accident restoration, we deliver solutions that stand the test of time.</p>
+      <a href="about.html"
+   data-aos="fade-up"
+   data-aos-delay="400"
+   class="learn-btn inline-block bg-primary text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+   Learn More About Us
+</a>
+
+    </div>
+  </div>
+</section>
+
+    </section>
+                
+    <section class="py-16 bg-gray-50" id="services">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
+    <h2 class="text-3xl font-bold text-primary mb-12" 
+        data-aos="fade-down" 
+        data-aos-duration="800">
+        Our Services
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Service Card 1 -->
+      <div class="service-card bg-white p-6 rounded-xl shadow-md" 
+           data-aos="zoom-in" 
+           data-aos-delay="100">
+        <i data-feather="truck" class="text-primary w-12 h-12 mb-4 mx-auto"></i>
+        <h3 class="text-xl font-semibold mb-2">Bus Body Building</h3>
+        <p class="text-gray-600">We specialize in designing and manufacturing custom bus bodies ...</p>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="service-card bg-white p-6 rounded-xl shadow-md" 
+           data-aos="zoom-in" 
+           data-aos-delay="200">
+        <i data-feather="tool" class="text-primary w-12 h-12 mb-4 mx-auto"></i>
+        <h3 class="text-xl font-semibold mb-2">Repair & Refurbishment</h3>
+        <p class="text-gray-600">We repair and restore damaged vehicles with expert craftsmanship ...</p>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="service-card bg-white p-6 rounded-xl shadow-md" 
+           data-aos="zoom-in" 
+           data-aos-delay="300">
+        <i data-feather="settings" class="text-primary w-12 h-12 mb-4 mx-auto"></i>
+        <h3 class="text-xl font-semibold mb-2">Customization & Painting</h3>
+        <p class="text-gray-600">From full-body paint jobs to custom interiors, we bring your vision to life.</p>
+      </div>
+        <!-- Service 4 -->
+                <div class="service-card bg-white p-6 rounded-xl shadow-md" 
+           data-aos="zoom-in" 
+           data-aos-delay="300">
+        <i data-feather="settings" class="text-primary w-12 h-12 mb-4 mx-auto"></i>
+                    <h3 class="text-xl font-semibold mb-2">Custom Fabrication</h3>
+                    <p class="text-gray-600">Specialized modifications, attachments, and metal body fabrication for unique automotive needs.</p>
+                </div>
+        
+            
+            <div class="text-center mt-12">
+                <a href="services.html" class="inline-block bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Call to Action -->
+    <section class="py-16 px-4 md:px-8 bg-primary text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Need a new bus body or vehicle restoration?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Get in touch with our team today for a free consultation and quote.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/contact.html" class="bg-white hover:bg-gray-100 text-primary font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center gap-2">
+                    <i data-feather="mail"></i> Get a Free Quote
+                </a>
+                <a href="tel:+9779856014872" class="bg-transparent hover:bg-white hover:text-primary border-2 border-white text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center gap-2">
+                    <i data-feather="phone"></i> Call Now: +977-9856014872
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section -->
+     <section class="py-16 bg-gray-50" id="team">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-primary mb-4">Our Team</h2>
+    <p class="text-gray-600 mb-12">Meet the dedicated professionals behind RB Engineering</p>
+
+    <!-- Team Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Member 1 -->
+      <div data-aos="fade-right" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col items-center">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary mb-4">
+          <img src="image/mama.jpg" alt="Bishnu Prasad Adhikari" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg font-bold">Bishnu Prasad Adhikari</h3>
+        <p class="text-primary font-semibold">Founder & CEO</p>
+        <p class="text-gray-600 italic mt-3 mb-4 px-2">"आर.बी. इन्जिनियरिङ हाम्रो मेहनत र प्रविधिगतको परिणाम हो। हामी प्रत्येक काममा सधैं इमानदार र जिम्मेवार रहन्छौं।"</p>
+        <div class="flex space-x-4">
+          
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col items-center">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary mb-4">
+          <img src="image/maiju.jpg" alt="Nanu Maya Adhikari" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg font-bold">Nanu Maya Adhikari</h3>
+        <p class="text-primary font-semibold">Managing Director</p>
+        <p class="text-gray-600 italic mt-3 mb-4 px-2">"हाम्रो कामको मुख्य लक्ष्य हो — समयमै उत्कृष्ट नतिजा दिनु। प्रत्येक परियोजनामा दक्षता र अनुशासन नै हाम्रो शक्ति हो।"</p>
+        <div class="flex space-x-4">
+          
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div data-aos="fade-left" data-aos-delay="200" class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col items-center">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary mb-4">
+          <img src="image/suzal.jpg" alt="Naitik Adhikari" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-lg font-bold">Naitik Adhikari</h3>
+        <p class="text-primary font-semibold">Technical Engineer</p>
+        <p class="text-gray-600 italic mt-3 mb-4 px-2">"हाम्रो प्रत्येक डिजाइन र संरचना इन्जिनियरिङ् सीपको प्रमाण हो। सटीकता, बलियोपन र सुन्दरता नै हाम्रो मुख्य लक्ष्य हो।"</p>
+        <div class="flex space-x-4">
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Meet Full Team Button -->
+    <div class="mt-12">
+      <a href="team.html"
+         class="inline-block bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition-transform transform hover:-translate-y-1 hover:shadow-lg duration-300">
+        Meet Our Full Team
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Gallery Preview -->
+<section class="py-16 px-4 md:px-8 max-w-7xl mx-auto" id="gallery">
+        <h2 class="text-3xl font-bold text-center text-primary mb-12">हाम्रा केही क्षणहरू</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Gallery Item 1 -->
+            <a href="/gallery.html" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="image/prixe.jpg" alt="Prize For Company" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="text-white text-center p-4">
+                        <h3 class="text-xl font-bold">Prize For Company</h3>
+                        <p class="text-sm">View more in our gallery</p>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Gallery Item 2 -->
+            <a href="/gallery.html" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="image/program.jpg" alt="Celebration Program" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="text-white text-center p-4">
+                        <h3 class="text-xl font-bold">Celebration Program</h3>
+                        <p class="text-sm">View more in our gallery</p>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Gallery Item 3 -->
+            <a href="/gallery.html" class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                <img src="image/buss.jpg" alt="Completed Bus Project" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="text-white text-center p-4">
+                        <h3 class="text-xl font-bold">Completed Bus Project</h3>
+                        <p class="text-sm">View more in our gallery</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="gallery.html" class="inline-block bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center gap-2 mx-auto">
+                <i data-feather="image"></i> View Full Gallery
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 px-4 md:px-8">
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+    <!-- Contact Form -->
+    <div class="lg:w-1/2" data-aos="fade-right">
+      <h2 class="text-3xl font-bold text-primary mb-6">Send Us a Message</h2>
+
+      <!-- ✅ Formspree Form -->
+      <form
+        id="contactForm"
+        action="https://formspree.io/f/mjkjvpdy"
+        method="POST"
+        class="bg-white p-8 rounded-lg shadow-md"
+      >
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-bold text-primary mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1">
+                                    <i data-feather="map-pin" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Workshop Location</h4>
+                                    <p class="text-gray-700">Chauthe, Pokhara, Nepal</p>
+                                    <a href="https://maps.google.com/?q=RB+Engineering+Pokhara" target="_blank" class="text-primary hover:underline mt-2 inline-block">View on Map</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1">
+                                    <i data-feather="phone" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Phone</h4>
+                                    <p class="text-gray-700">+977-9856014872</p>
+                                    <a href="tel:+9779856014872" class="text-primary hover:underline mt-2 inline-block">Call Now</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1">
+                                    <i data-feather="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Email</h4>
+                                    <p class="text-gray-700">rbengineeringpokhara @gmail.com</p>
+                                    <a href="mailto:rbengineeringpokhara@gmail.com" class="text-primary hover:underline mt-2 inline-block">Send Email</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1">
+                                    <i data-feather="clock" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Working Hours</h4>
+                                    <p class="text-gray-700">Sunday - Friday: 7:00 AM - 10:00 PM</p>
+                                    <p class="text-gray-700">Saturday: 7:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     </main>
+
+    <!-- Footer Component -->
+    <custom-footer></custom-footer>
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button">
+        <i data-feather="message-circle" class="w-6 h-6"></i>
+    </div>
+<!-- Scripts -->
+   
+ 
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+     <script src="navbar.js"></script>
+     <script>
+  AOS.init({
+   duration: 1000, // animation duration in ms
+    once: false,
+    mirror: true, // animate only once when scrolling down
+    offset: 100,
+    easing: 'ease-in-out',
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation duration in ms
+    once: false,
+    mirror: true, // animate only once when scrolling down
+    offset: 100,
+    easing: 'ease-in-out',
+  });
+</script>
+
+
+     
+</body>
+</html>
