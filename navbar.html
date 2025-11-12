@@ -1,24 +1,109 @@
-<!-- components/navbar.html -->
-<nav class="navbar" role="navigation" aria-label="Main navigation">
-  <div class="nav-container">
+<nav class="navbar fixed top-0 left-0 w-full bg-white shadow-md z-[1000]">
+    <canvas id="navParticles"></canvas>
+
+  <div class="navbar-progress"></div>
+
+  <div class="nav-holo-overlay"><canvas id="navParticles"></canvas></div>
+  <div class="nav-container mx-auto flex items-center justify-between px-4 md:px-8 py-3">
     <!-- Logo -->
-    <a href="index.html" class="nav-logo" aria-label="R.B Engineering home">
-      <img src="image/logo.png" alt="R.B Engineering Logo" class="logo-img">
-      <span>R.B Engineering</span>
+    <a href="index.html" class="nav-logo flex items-center gap-2">
+      <img src="image/logo.png" alt="R.B Engineering Logo" class="w-10 h-10 object-contain" />
+      <span class="text-lg font-semibold text-primary">R.B Engineering</span>
     </a>
 
-    <!-- Links -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <!-- Desktop Links -->
+    <ul class="nav-links hidden md:flex gap-8 text-gray-700 font-medium">
+      <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+      <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+      <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+      <li><a href="gallery.html" class="hover:text-primary transition-colors">Gallery</a></li>
+      <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
     </ul>
 
-    <!-- Hamburger -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <!-- Mobile Menu Button -->
+    <div id="menuToggle" class="menu-toggle md:hidden flex flex-col gap-1.5 cursor-pointer z-[1100]">
+      <span class="w-6 h-0.5 bg-primary rounded"></span>
+      <span class="w-6 h-0.5 bg-primary rounded"></span>
+      <span class="w-6 h-0.5 bg-primary rounded"></span>
+    </div>
   </div>
+
+
 </nav>
+
+<!-- Sidebar Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-[999]"></div>
+
+<!-- Full Sidebar -->
+<div id="sidebar" class="fixed top-0 right-0 h-full w-3/4 sm:w-1/2 bg-gradient-to-b from-[#004C99] to-[#003366] text-white transform translate-x-full transition-transform duration-300 ease-in-out z-[1001] flex flex-col justify-between shadow-2xl">
+  <div class="flex justify-end p-5">
+    <button id="closeMenu" class="text-3xl font-light hover:text-yellow-400 transition-colors">&times;</button>
+  </div>
+
+  <ul class="flex flex-col items-center gap-6 text-lg font-medium mb-auto">
+    <li><a href="index.html" class="hover:text-yellow-400 transition-all">Home</a></li>
+    <li><a href="about.html" class="hover:text-yellow-400 transition-all">About</a></li>
+    <li><a href="services.html" class="hover:text-yellow-400 transition-all">Services</a></li>
+    <li><a href="gallery.html" class="hover:text-yellow-400 transition-all">Gallery</a></li>
+    <li><a href="contact.html" class="hover:text-yellow-400 transition-all">Contact</a></li>
+  </ul>
+
+  <div class="flex justify-center gap-5 pb-6">
+    <a href="#" class="hover:text-yellow-400 transition-colors"><i data-feather="facebook"></i></a>
+    <a href="#" class="hover:text-yellow-400 transition-colors"><i data-feather="instagram"></i></a>
+    <a href="#" class="hover:text-yellow-400 transition-colors"><i data-feather="linkedin"></i></a>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const canvas = document.getElementById("navParticles");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+  let scrollSpeed = 0;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.querySelector(".navbar").offsetHeight;
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  for (let i = 0; i < 40; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 3 + 1,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5,
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "rgba(0, 140, 255, 0.8)";
+    for (let p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      p.x += p.dx * (1 + scrollSpeed * 0.1);
+      p.y += p.dy * (1 + scrollSpeed * 0.1);
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  // scroll-based acceleration
+  window.addEventListener("scroll", () => {
+    scrollSpeed = Math.min(5, Math.abs(window.scrollY - (this.lastScrollY || 0)) / 10);
+    this.lastScrollY = window.scrollY;
+    clearTimeout(this.scrollTimeout);
+    this.scrollTimeout = setTimeout(() => (scrollSpeed = 0), 100);
+  });
+});
+</script>
+
