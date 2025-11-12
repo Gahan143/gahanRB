@@ -46,7 +46,8 @@
 
   <main class="main-content">
     <!-- Hero Section -->
-    <section class="relative py-20 bg-gray-900 overflow-hidden">
+    <section class="relative py-28 bg-gray-900 mt-[80px]">
+
       <div class="absolute inset-0">
         <img
           src="image/gallery.jpg"
@@ -130,8 +131,8 @@
   <script>
     // Initialize AOS
     AOS.init({
-      duration: 800,
-      once: false,
+      duration: 600,
+      once: true,
     });
 
     window.addEventListener("scroll", () => {
@@ -296,5 +297,11 @@
     document.addEventListener("DOMContentLoaded", initGallery);
     feather.replace();
   </script>
+  <script>
+  window.addEventListener('load', () => {
+    AOS.refreshHard(); // ensures all elements are visible and scrollable
+  });
+</script>
+
 </body>
 </html>
