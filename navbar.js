@@ -66,3 +66,23 @@ window.addEventListener("scroll", () => {
   const scrolled = (scrollTop / docHeight) * 100;
   progress.style.width = `${scrolled}%`;
 });
+// ✅ Navbar shrink on scroll fix
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const logoText = document.querySelector(".nav-logo span");
+
+  function handleNavbarShrink() {
+    if (window.scrollY > 50) {
+      navbar.classList.add("navbar-shrink");
+      if (logoText) logoText.classList.add("hidden-text");
+    } else {
+      navbar.classList.remove("navbar-shrink");
+      if (logoText) logoText.classList.remove("hidden-text");
+    }
+  }
+
+  // Run once on load and again on scroll
+  handleNavbarShrink();
+  window.addEventListener("scroll", handleNavbarShrink);
+});
+
