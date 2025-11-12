@@ -667,3 +667,47 @@ body.overflow-hidden {
   box-shadow: 0 0 8px rgb(156, 153, 153);
   transition: width 0.1s ease-out;
 }
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-shrink {
+    height: 40px !important;
+    padding: 0.3rem 0.8rem !important;
+  }
+
+  .navbar .nav-logo img {
+    height: 55px !important;
+    width: 55px !important;
+  }
+
+  .navbar-shrink .nav-logo img {
+    height: 45px !important;
+    width: 45px !important;
+  }
+
+  .navbar .nav-links a {
+    font-size: 0.9rem;
+  }
+}
+/* === Fix Mobile Top Gap Under Navbar === */
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px !important; /* reduce space below navbar */
+  }
+
+  main,
+  section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .hero,
+  .banner,
+  .page-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
