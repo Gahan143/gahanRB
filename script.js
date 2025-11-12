@@ -156,6 +156,18 @@ document.querySelectorAll('.learn-btn, .view-btn').forEach(button => {
     this.appendChild(circle);
   });
 });
-window.addEventListener('scroll', () => {
-  AOS.refresh();
+AOS.init({
+  duration: 800,
+  easing: "ease-in-out",
+  once: true,
 });
+// Parallax background effect on scroll
+window.addEventListener("scroll", () => {
+  const navbarBg = document.querySelector(".navbar-bg");
+  if (!navbarBg) return;
+
+  // Slight horizontal movement
+  const scrollY = window.scrollY;
+  navbarBg.style.transform = `translateX(${scrollY * 0.1}px)`;
+});
+navbarBg.style.transform = `translate(${scrollY * 0.1}px, ${scrollY * 0.05}px)`;
